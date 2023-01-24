@@ -1,0 +1,66 @@
+/*
+  You can add custom CSS rules or import files here.
+*/
+
+
+
+
+/* Import the CSS files */
+@import './styles-generated.css';
+
+.rz-panel-menu {
+  background-color: #e5d7ed;
+  color: #000000;
+}
+
+.rz-panel-menu .rz-navigation-item-icon {
+  height: 1.575;
+  width: 1.5rem;
+  color: #000000;
+  margin: 0 0.9375rem 0 0;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper:hover {
+  background-color: #c59edd;
+  color: #000000;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper-active {
+  background-color: #c59edd;
+}
+
+.rz-panel-menu .rz-navigation-item-wrapper-active:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #000000;
+}
+
+.rz-panel-menu .rz-navigation-menu .rz-navigation-menu .rz-navigation-item-active,
+.rz-panel-menu .rz-navigation-menu .rz-navigation-menu .rz-navigation-item-wrapper-active {
+  background-color: #c59edd;
+  color: inherit;
+}
+
+.rz-panel-menu .rz-navigation-menu .rz-navigation-item-wrapper:hover {
+  background-color: #c59edd;
+  color: inherit;
+}
+
+.rz-panel-menu .rz-navigation-menu .rz-navigation-item-wrapper {
+  background-color: #e2c4f3;
+  color: inherit;
+}
+
+
+
+.rz-panel-menu .rz-navigation-menu .rz-navigation-item-wrapper-active {
+  border-bottom: none;
+  font-size: 0.875rem;
+  background-color: #c59edd;
+}
+
+/* color: black;
+background-color: #e5d7ed; */
