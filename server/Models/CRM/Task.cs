@@ -14,6 +14,8 @@ namespace InDrivoHRM.Models.Crm
       get;
       set;
     }
+    
+    [Encrypted]
     public string Title
     {
       get;

@@ -7,13 +7,21 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 
 using InDrivoHRM.Models.Crm;
+using Microsoft.EntityFrameworkCore.DataEncryption;
+using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
 
 namespace InDrivoHRM.Data
 {
   public partial class CrmContext : Microsoft.EntityFrameworkCore.DbContext
   {
+        private byte[] key = new byte[] {122, 207, 192, 104, 243, 81, 149, 27, 35, 10, 48, 140, 120, 177, 224, 78};
+        private byte[] iv = new byte[] {61, 27, 239, 17, 150, 12, 232, 101, 40, 225, 106, 33, 112, 174, 239, 146};
+
+        private readonly IEncryptionProvider provider;
     public CrmContext(DbContextOptions<CrmContext> options):base(options)
     {
+          // var keys = AesProvider.GenerateKey(AesKeySize.AES128Bits);
+          this.provider = new AesProvider(this.key, this.iv);
     }
 
     public CrmContext()
@@ -24,6 +32,7 @@ namespace InDrivoHRM.Data
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+          builder.UseEncryption(this.provider);
         base.OnModelCreating(builder);
 
         builder.Entity<InDrivoHRM.Models.Crm.Opportunity>()

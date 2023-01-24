@@ -15,13 +15,15 @@ namespace InDrivoHRM.Models.Crm
       get;
       set;
     }
-
+    
     public ICollection<Task> Tasks { get; set; }
     public decimal Amount
     {
       get;
       set;
     }
+    
+    [Encrypted]
     public string Name
     {
       get;
