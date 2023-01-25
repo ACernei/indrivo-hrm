@@ -18,7 +18,6 @@ namespace InDrivoHRM.Models.Crm
     
     public ICollection<Opportunity> Opportunities { get; set; }
     
-    [Encrypted]
     public string Name
     {
       get;
